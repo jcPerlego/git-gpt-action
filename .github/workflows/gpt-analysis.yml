@@ -29,11 +29,11 @@ jobs:
         uses: actions/checkout@v2
         run: echo "Github ${{ github.event }}"
 
-      - name: Run my action
-        uses: actions/checkout@v2
-        uses: ./
-        with:
-          github: ${{ github }}
+      # - name: Run my action
+      #   uses: actions/checkout@v2
+      #   uses: ./
+      #   with:
+      #     github: ${{ github }}
           # owner: ${{ github.event.repository.owner }}
           # repo: ${{ github.event.repository.name }}
           # pr_number: ${{ github.event.number }}
