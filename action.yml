@@ -1,0 +1,7 @@
+name: 'git-gpt-action'
+author: 'Joseph Coker'
+description: 'Analyse code changes with GPT'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
