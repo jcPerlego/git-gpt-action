@@ -25,9 +25,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Log out event stuff
+        uses: actions/checkout@v2
+        run: echo "Github ${{ github.event }}"
+
       - name: Run my action
-        if: github.event.pull_request.head.repo.full_name == github.repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         uses: ./
         with:
           github: ${{ github }}
