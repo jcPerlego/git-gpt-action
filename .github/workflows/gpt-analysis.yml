@@ -1,0 +1,40 @@
+name: GPT analysis
+
+on: 
+  pull_request:
+
+jobs:
+
+  analyse-pr:
+    runs-on: ubuntu-latest
+    name: Analyses code changes with GPT and makes suggestions
+    steps:
+      - name: Analyse PR
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Log out event stuff
+        uses: actions/checkout@v2
+        run: echo "Github ${{ github.event }}"
+
+      # - name: Run my action
+      #   uses: actions/checkout@v2
+      #   uses: ./
+      #   with:
+      #     github: ${{ github }}
+          # owner: ${{ github.event.repository.owner }}
+          # repo: ${{ github.event.repository.name }}
+          # pr_number: ${{ github.event.number }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
