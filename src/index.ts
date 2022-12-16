@@ -29,3 +29,5 @@ const main = async () => {
     console.error(error);
   }
 };
+
+main();
