@@ -26,6 +26,7 @@ jobs:
         run: npm run build
 
       - name: Run my action
+        if: github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/checkout@v2
         uses: ./
         with:
