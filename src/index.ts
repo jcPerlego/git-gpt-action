@@ -3,7 +3,7 @@ import * as github from '@actions/github';
 
 const main = async () => {
   try {
-    console.log('HIYO');
+    console.log('HIYOOO');
 
     const github = core.getInput('github', { required: true });
 
