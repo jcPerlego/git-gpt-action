@@ -2,7 +2,6 @@ name: GPT analysis
 
 on: 
   pull_request:
-    types: [opened, reopened, synchronize]
 
 jobs:
 
