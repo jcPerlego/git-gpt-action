@@ -10,7 +10,7 @@ jobs:
     name: Analyses code changes with GPT and makes suggestions
     steps:
       - name: Analyse PR
-        - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
@@ -26,6 +26,7 @@ jobs:
         run: npm run build
 
       - name: Run my action
+        uses: actions/checkout@v2
         uses: ./
         with:
           github: ${{ github }}
